@@ -1,10 +1,10 @@
-# Registro e Autorizacao de App no Trello com Python
+# Registro e Autorizacao de App no Trello com Python para Agente de IA
 
 ## Sobre o Projeto
 
-Este repositório foi criado como parte do desafio da DIO sobre registro e autorização de uma aplicação no Trello utilizando Python.
+Este repositório foi criado como parte do desafio da DIO sobre registro e autorização de uma aplicação no Trello utilizando Python, com foco em preparar a integração para um agente de IA.
 
-O objetivo é documentar o processo de criação de uma chave de API, geração de token de acesso e uso dessas credenciais em um script Python simples, seguindo boas práticas de segurança.
+O objetivo é documentar o processo de criação de uma chave de API, geração de token de acesso e uso dessas credenciais em um script Python simples. Essa autorização é a base para que um agente de IA possa consultar quadros, listas e cartões no Trello de forma segura.
 
 ## Objetivos
 
@@ -12,6 +12,7 @@ O objetivo é documentar o processo de criação de uma chave de API, geração 
 - Gerar uma chave de API;
 - Autorizar o acesso por token;
 - Usar Python para consultar dados da API do Trello;
+- Entender como essa autorização pode apoiar um agente de IA;
 - Evitar exposição de credenciais no GitHub;
 - Documentar o processo de forma clara e reutilizável.
 
@@ -19,8 +20,32 @@ O objetivo é documentar o processo de criação de uma chave de API, geração 
 
 - Python 3;
 - API REST do Trello;
+- Conceitos de agentes de IA;
 - Git e GitHub;
 - Variáveis de ambiente.
+
+## Relacao com Agente de IA
+
+Um agente de IA precisa acessar ferramentas externas para executar tarefas úteis. No contexto deste desafio, o Trello funciona como uma dessas ferramentas.
+
+Com a autorização configurada, um agente poderia:
+
+- Ler cartões de um quadro;
+- Identificar tarefas atrasadas;
+- Resumir atividades pendentes;
+- Sugerir prioridades;
+- Criar cartões a partir de comandos do usuário;
+- Atualizar listas conforme o andamento das tarefas.
+
+Antes de qualquer automação inteligente, é necessário garantir que o acesso ao Trello esteja funcionando corretamente e que as credenciais estejam protegidas.
+
+Fluxo esperado:
+
+```text
+Usuário -> Agente de IA -> Script Python -> API do Trello -> Quadros e cartões
+```
+
+Neste repositório, o foco está na etapa inicial: registrar a aplicação, configurar credenciais e validar a autorização com Python.
 
 ## Etapas do Processo
 
@@ -96,6 +121,8 @@ Nome completo: Nome Completo
 ## Aprendizados
 
 Este desafio reforçou a importância de separar código e credenciais. Em integrações com APIs externas, não basta fazer a requisição funcionar; também é necessário proteger tokens, organizar a documentação e garantir que outras pessoas consigam reproduzir o processo com segurança.
+
+Também ficou claro que um agente de IA depende de integrações bem configuradas. Sem autenticação segura, o agente não consegue acessar dados externos nem executar ações em ferramentas como o Trello.
 
 ## Referências
 
