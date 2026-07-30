@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 import urllib.parse
 import urllib.request
 
@@ -36,4 +37,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except RuntimeError as error:
+        print(f"Erro de configuracao: {error}", file=sys.stderr)
+        sys.exit(1)
+    except urllib.error.URLError as error:
+        print(f"Erro ao acessar a API do Trello: {error}", file=sys.stderr)
+        sys.exit(1)
